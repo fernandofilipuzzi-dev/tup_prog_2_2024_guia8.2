@@ -22,7 +22,7 @@ namespace Ejercicio1
             if (Validar() == true)
             {
                 int dni = Convert.ToInt32(tbDNI.Text);
-                string nombre = tbNombres.Text;
+                string nombre = tbApellidoNombres.Text;
                 double monto = Convert.ToDouble(tbMonto.Text);
                 int cantCuotas = Convert.ToInt32(nupCuotas.Value);
                 DateTime fechaAltaPlan = pkFechaInicioPlan.Value;
@@ -39,7 +39,7 @@ namespace Ejercicio1
 
                 #region limpiando controles
                 tbDNI.Clear();
-                tbNombres.Clear();
+                tbApellidoNombres.Clear();
                 tbMonto.Clear();
                 nupCuotas.Value = 0;
                 #endregion
@@ -56,10 +56,10 @@ namespace Ejercicio1
                 tbDNI.BackColor = Color.Orange;
             }
 
-            if (string.IsNullOrEmpty(tbApellidosYNombres.Text.Trim()) == true)
+            if (string.IsNullOrEmpty(tbApellidoNombres.Text.Trim()) == true)
             {
                 isNoOk |= true;
-                tbApellidosYNombres.BackColor = Color.Orange;
+                tbApellidoNombres.BackColor = Color.Orange;
             }
 
             if (string.IsNullOrEmpty(tbMonto.Text.Trim()) == true)
@@ -69,6 +69,55 @@ namespace Ejercicio1
             }
 
             return isNoOk == false;
+        }
+
+        private void btnAltaFeriados_Click(object sender, EventArgs e)
+        {
+            FormFeriados fFeriados = new FormFeriados();
+
+            for (int idx = 0; idx < calendario.CantidadFeriados; idx++)
+            {
+                DateTime dia = calendario[idx].Dia;
+                fFeriados.mCCalendario.AddBoldedDate(dia);
+            }
+
+            fFeriados.ShowDialog();
+
+            while (fFeriados.DialogResult == DialogResult.OK || 
+                        fFeriados.DialogResult == DialogResult.Retry)
+            {
+                if (fFeriados.DialogResult == DialogResult.OK)
+                {
+                    DateTime dia = fFeriados.mCCalendario.SelectionStart;
+                    string descripcion = fFeriados.tbDescripcionFeriado.Text;
+
+                    Feriado f = calendario[dia];
+                    if (f == null)
+                    {
+                        f = calendario.AgregarFeriado(dia, descripcion);
+                        fFeriados.mCCalendario.AddBoldedDate(f.Dia);
+                    }
+                    else
+                    {
+                        f.Descripcion = descripcion;
+                    }
+                }
+                else if (fFeriados.DialogResult == DialogResult.Retry)
+                {
+                    DateTime dia = fFeriados.mCCalendario.SelectionStart;
+                    Feriado feriado = calendario[dia];
+                    if (feriado != null)
+                    {
+                        fFeriados.tbDescripcionFeriado.Text = feriado.Descripcion;
+                    }
+                    else
+                    {
+                        fFeriados.tbDescripcionFeriado.Clear();
+                    }
+                }
+
+                fFeriados.ShowDialog();
+            }
         }
     }
 }

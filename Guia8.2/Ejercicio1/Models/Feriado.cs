@@ -8,9 +8,10 @@ namespace Ejercicio1.Models
 
         public string Descripcion { get; set; }
 
-        public bool CompararDia(DateTime day)
+        public Feriado(DateTime dia, string descripcion)
         {
-            return day != null && Dia != null && day.Year == Dia.Year && day.Month == Dia.Month && day.Day == Dia.Day;
-        }
+            Dia = dia;
+            Descripcion = descripcion;
+        }   
     }
 }

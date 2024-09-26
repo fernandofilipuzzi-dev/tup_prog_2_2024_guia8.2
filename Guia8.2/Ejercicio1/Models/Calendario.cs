@@ -7,6 +7,14 @@ namespace Ejercicio1.Models
     {
         List<Feriado> feriados = new List<Feriado>();
 
+        public int CantidadFeriados 
+        {
+            get 
+            {
+                return feriados.Count;
+            }
+        }
+
         public Feriado Buscar(DateTime fecha)
         {
             Feriado buscado = null;
@@ -27,21 +35,36 @@ namespace Ejercicio1.Models
             return buscado;
         }
 
-        public DateTime[] Fechas()
+        public Feriado AgregarFeriado(DateTime dia, string descripcion)
         {
-            DateTime[] fechas = new DateTime[feriados.Count];
-            int n = 0;
-            while (n < feriados.Count)
-            {
-                fechas[n] = feriados[n].Dia;
-                n++;
-            }
-            return fechas;
+            Feriado nuevo = new Feriado(dia, descripcion);
+            feriados.Add(nuevo);
+            return nuevo;
         }
 
-        public void AgregarFeriado(DateTime dia, string descripcion)
+        public Feriado this[int idx] 
         {
-            feriados.Add(new Feriado() { Dia = dia, Descripcion = descripcion });
+            get
+            {
+                if (idx >= 0 && idx < CantidadFeriados)
+                    return feriados[idx];
+                return null;
+            }
+        }
+
+        public Feriado this[DateTime dia]
+        {
+            get
+            {
+                foreach (Feriado feriado in feriados)
+                {
+                    if (feriado.Dia.Year==dia.Year && feriado.Dia.Month == dia.Month && feriado.Dia.Day == dia.Day)
+                    { 
+                        return feriado; 
+                    }
+                }
+                return null;
+            }
         }
     }
 }

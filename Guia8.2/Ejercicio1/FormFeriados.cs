@@ -16,5 +16,10 @@ namespace Ejercicio1
         {
             InitializeComponent();
         }
+
+        private void mCCalendario_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            DialogResult = DialogResult.Retry;
+        }
     }
 }
