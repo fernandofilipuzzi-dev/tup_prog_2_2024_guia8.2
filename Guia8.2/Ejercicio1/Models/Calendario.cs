@@ -15,26 +15,6 @@ namespace Ejercicio1.Models
             }
         }
 
-        public Feriado Buscar(DateTime fecha)
-        {
-            Feriado buscado = null;
-            int n = 0;
-            while (n < feriados.Count && buscado == null)
-            {
-                if (feriados[n].Dia.Year == fecha.Year &&
-                    feriados[n].Dia.Month == fecha.Month &&
-                    feriados[n].Dia.Day == fecha.Day)
-                {
-                    buscado = feriados[n];
-                }
-                else
-                {
-                    n++;
-                }
-            }
-            return buscado;
-        }
-
         public Feriado AgregarFeriado(DateTime dia, string descripcion)
         {
             Feriado nuevo = new Feriado(dia, descripcion);

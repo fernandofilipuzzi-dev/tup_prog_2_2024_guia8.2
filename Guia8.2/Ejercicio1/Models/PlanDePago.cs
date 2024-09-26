@@ -26,6 +26,9 @@ namespace Ejercicio1.Models
             this.cantidadCuotas = cantCuotas;
             this.FechaAlta = fechaAlta;
 
+            if (cantidadCuotas == 0)
+                throw new Exception("La cantidad de cuotras debe ser mayor a cero");
+
             double montoCuota = monto / cantCuotas;
 
             DateTime fechaMesProximo = PrimerDiaHabilMesSiguiente(fechaAlta, calendario);
@@ -34,17 +37,9 @@ namespace Ejercicio1.Models
             while (nroCuota <= cantCuotas)
             {
                 DateTime primerVenc = CalcularFechaVencimiento(fechaMesProximo, 8, calendario);
-                DateTime segundoVenc = CalcularFechaVencimiento(primerVenc, 15 + 1, calendario);
+                DateTime segundoVenc = CalcularFechaVencimiento(primerVenc, 15, calendario);
 
-                Cuota cuota = new Cuota
-                {
-                    Numero = nroCuota,
-                    MontoBase = montoCuota,
-                    PorcenVoluntario = 5,
-                    FechaPrimerVenc = primerVenc,
-                    PorcenSegundoVenc = 20,
-                    FechaSegundoVenc = segundoVenc
-                };
+                Cuota cuota = new Cuota(nroCuota, montoCuota, primerVenc,5,segundoVenc,20);
 
                 cuotas.Add(cuota);
 
@@ -62,8 +57,9 @@ namespace Ejercicio1.Models
 
         private DateTime DeterminarDiaHabil(DateTime actual, Calendario feriados)
         {
-            if (actual.DayOfWeek == DayOfWeek.Saturday || actual.DayOfWeek == DayOfWeek.Sunday ||
-                feriados.Buscar(actual) != null)
+            if (actual.DayOfWeek == DayOfWeek.Saturday || 
+                actual.DayOfWeek == DayOfWeek.Sunday ||
+                feriados[actual] != null)
             {
                 actual = DeterminarDiaHabil(actual.AddDays(1), feriados);
             }

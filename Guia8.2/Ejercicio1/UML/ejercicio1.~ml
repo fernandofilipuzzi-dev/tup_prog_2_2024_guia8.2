@@ -325,8 +325,8 @@
 <XPD:OBJ name="OwnedViews[5]" type="UMLClassView" guid="ve7fhLdtaEWfT/mNd2fyVwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">408</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">28</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">444</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">32</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">215</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">82</XPD:ATTR>
 <XPD:REF name="Model">UvOZYlbLX0uXIe1JjfnfDwAA</XPD:REF>
@@ -356,10 +356,10 @@
 <XPD:OBJ name="OwnedViews[6]" type="UMLClassView" guid="XMz1wvSjXka6bx2jw7lm2gAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">104</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">140</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">100</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">120</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">304</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">95</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">121</XPD:ATTR>
 <XPD:REF name="Model">CMJ6cv//nkiRvaW5UOtOaQAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="nvEewmOUzUq+HdIOybtUVAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="LSXxy0fP/kO8RWGL62M8zQAA">
@@ -387,7 +387,7 @@
 <XPD:OBJ name="OwnedViews[7]" type="UMLAssociationView" guid="NR6gDLN6qU+ZS1jFI2PnmQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">425,109;357,140</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">444,111;403,126</XPD:ATTR>
 <XPD:REF name="Model">tz6WdZQmqUGl4/TVA+lW8AAA</XPD:REF>
 <XPD:REF name="Head">XMz1wvSjXka6bx2jw7lm2gAA</XPD:REF>
 <XPD:REF name="Tail">ve7fhLdtaEWfT/mNd2fyVwAA</XPD:REF>
@@ -471,7 +471,7 @@
 <XPD:OBJ name="OwnedViews[8]" type="UMLDependencyView" guid="18r3q9acq0qTELLXev/leAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">288,280;272,234</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">287,280;273,240</XPD:ATTR>
 <XPD:REF name="Model">lRxtN4G0fE63KnF3IFVFvgAA</XPD:REF>
 <XPD:REF name="Head">XMz1wvSjXka6bx2jw7lm2gAA</XPD:REF>
 <XPD:REF name="Tail">jhKUXpysBkaAqZvJSpje+wAA</XPD:REF>
@@ -939,11 +939,23 @@
 <XPD:REF name="TypedParameters[3]">FfwOfKoqfE+fK8rsiOaOqQAA</XPD:REF>
 <XPD:ATTR name="#Associations" type="integer">1</XPD:ATTR>
 <XPD:REF name="Associations[0]">Ov2l7wHGUkS3MgkyHLzMTAAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">3</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="jyYMYbkQIkGMtmIEIkTGmgAA">
 <XPD:ATTR name="Name" type="string">CantidadFeriados</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">readonly</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="Owner">CMJ6cv//nkiRvaW5UOtOaQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="Ghttt384U0+DI6OnCl87WQAA">
+<XPD:ATTR name="Name" type="string">this(dia</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">indexer</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">DateTime):Feriado</XPD:ATTR>
+<XPD:REF name="Owner">CMJ6cv//nkiRvaW5UOtOaQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="RW6Kh2tpQUWKKnoT4tFK3gAA">
+<XPD:ATTR name="Name" type="string">this(idx</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">indexer</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int):Feriado</XPD:ATTR>
 <XPD:REF name="Owner">CMJ6cv//nkiRvaW5UOtOaQAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>

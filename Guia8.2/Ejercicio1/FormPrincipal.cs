@@ -21,28 +21,31 @@ namespace Ejercicio1
         {
             if (Validar() == true)
             {
-                int dni = Convert.ToInt32(tbDNI.Text);
-                string nombre = tbApellidoNombres.Text;
-                double monto = Convert.ToDouble(tbMonto.Text);
-                int cantCuotas = Convert.ToInt32(nupCuotas.Value);
-                DateTime fechaAltaPlan = pkFechaInicioPlan.Value;
-
-                Infractor destinatario = new Infractor
+                try
                 {
-                    DNI = dni,
-                    ApelldosyNombres = nombre
-                };
+                    int dni = Convert.ToInt32(tbDNI.Text);
+                    string nombre = tbApellidoNombres.Text;
+                    double monto = Convert.ToDouble(tbMonto.Text);
+                    int cantCuotas = Convert.ToInt32(nupCuotas.Value);
+                    DateTime fechaAltaPlan = pkFechaInicioPlan.Value;
 
-                PlanDePago plan = new PlanDePago(monto, cantCuotas, fechaAltaPlan, destinatario, calendario);
+                    Infractor destinatario = new Infractor(dni, nombre);
 
-                tbVer.Text = plan.VerDetalle();
+                    PlanDePago plan = new PlanDePago(monto, cantCuotas, fechaAltaPlan, destinatario, calendario);
 
-                #region limpiando controles
-                tbDNI.Clear();
-                tbApellidoNombres.Clear();
-                tbMonto.Clear();
-                nupCuotas.Value = 0;
-                #endregion
+                    tbVer.Text = plan.VerDetalle();
+
+                    #region limpiando controles
+                    tbDNI.Clear();
+                    tbApellidoNombres.Clear();
+                    tbMonto.Clear();
+                    nupCuotas.Value = 0;
+                    #endregion
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

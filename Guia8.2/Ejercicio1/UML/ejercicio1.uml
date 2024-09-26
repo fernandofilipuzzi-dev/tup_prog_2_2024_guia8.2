@@ -853,10 +853,9 @@
 <XPD:REF name="BehavioralFeature">z9HOI7474EmoW++omn2P5QAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#TypedParameters" type="integer">3</XPD:ATTR>
-<XPD:REF name="TypedParameters[0]">iz6HgF7ZkEmhtDnnyhzU2AAA</XPD:REF>
-<XPD:REF name="TypedParameters[1]">eKa36YvgCk6UFU7TkFTxaAAA</XPD:REF>
-<XPD:REF name="TypedParameters[2]">lgvPcxlR6Emkv1U3RrcCoQAA</XPD:REF>
+<XPD:ATTR name="#TypedParameters" type="integer">2</XPD:ATTR>
+<XPD:REF name="TypedParameters[0]">eKa36YvgCk6UFU7TkFTxaAAA</XPD:REF>
+<XPD:REF name="TypedParameters[1]">lgvPcxlR6Emkv1U3RrcCoQAA</XPD:REF>
 <XPD:ATTR name="#Associations" type="integer">1</XPD:ATTR>
 <XPD:REF name="Associations[0]">q0LQ19+l3Eaz3qopzwkl+gAA</XPD:REF>
 <XPD:ATTR name="#Attributes" type="integer">2</XPD:ATTR>
@@ -881,23 +880,8 @@
 <XPD:REF name="Views[3]">0V6cNMvGZUSk/IRRqTP/FQAA</XPD:REF>
 <XPD:ATTR name="#SupplierDependencies" type="integer">1</XPD:ATTR>
 <XPD:REF name="SupplierDependencies[0]">lRxtN4G0fE63KnF3IFVFvgAA</XPD:REF>
-<XPD:ATTR name="#Operations" type="integer">3</XPD:ATTR>
-<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="oVKnb7LW/ESSRPGYXmKZhgAA">
-<XPD:ATTR name="Name" type="string">Buscar</XPD:ATTR>
-<XPD:REF name="Owner">CMJ6cv//nkiRvaW5UOtOaQAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="iz6HgF7ZkEmhtDnnyhzU2AAA">
-<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">oVKnb7LW/ESSRPGYXmKZhgAA</XPD:REF>
-<XPD:REF name="Type_">UvOZYlbLX0uXIe1JjfnfDwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="R74DAQ47I06uZQpkcjvGLAAA">
-<XPD:ATTR name="Name" type="string">fecha</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">DateTime</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">oVKnb7LW/ESSRPGYXmKZhgAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="bLBz1/KkKE6JcTsyrloQJwAA">
+<XPD:ATTR name="#Operations" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="bLBz1/KkKE6JcTsyrloQJwAA">
 <XPD:ATTR name="Name" type="string">AgregarFeriado</XPD:ATTR>
 <XPD:REF name="Owner">CMJ6cv//nkiRvaW5UOtOaQAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
@@ -917,7 +901,7 @@
 <XPD:REF name="BehavioralFeature">bLBz1/KkKE6JcTsyrloQJwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="ORJ/UZDdUESY34nrVXIuMAAA">
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="ORJ/UZDdUESY34nrVXIuMAAA">
 <XPD:ATTR name="Name" type="string">VerFeriado</XPD:ATTR>
 <XPD:REF name="Owner">CMJ6cv//nkiRvaW5UOtOaQAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>

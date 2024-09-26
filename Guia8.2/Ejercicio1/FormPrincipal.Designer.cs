@@ -131,6 +131,7 @@
             // 
             // tbVer
             // 
+            this.tbVer.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbVer.Location = new System.Drawing.Point(6, 338);
             this.tbVer.Multiline = true;
             this.tbVer.Name = "tbVer";

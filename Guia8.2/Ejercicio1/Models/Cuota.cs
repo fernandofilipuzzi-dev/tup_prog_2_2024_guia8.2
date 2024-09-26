@@ -67,18 +67,27 @@ namespace Ejercicio1.Models
             }
         }
 
+        public Cuota(int numero, double montoBase,  DateTime fechaPrimerVenc, double porcenVoluntario, DateTime fechaSegundoVenc,double porcenSegundoVenc )
+        {
+            Numero = numero;
+            MontoBase = montoBase;
+            PorcenVoluntario = porcenVoluntario;
+            FechaPrimerVenc = fechaPrimerVenc;
+            PorcenSegundoVenc = porcenSegundoVenc;
+            FechaSegundoVenc = fechaSegundoVenc;
+        }
+
         public override string ToString()
         {
-            string linea = $"{$"Cuota número: {Numero} -  Valor Cuota: ",-35}${MontoBase,15:f2}\r\n" +
-                           $"  {$"Donación voluntaria ({PorcenVoluntario}%) ",-33}${MontoVoluntario,15:f2}" +
-                           "\r\n" +
-                           $"  {$"Primer Venc. ({FechaPrimerVenc:dd/MM/yy})",-33}${MontoPrimerVenc,15:f2}\r\n" +
-                           "\r\n" +
-                           $"  {$"Base. segundo Venc. ",-33}${MontoSegundoVenc,15:f2}\r\n" +
-                           $"  {$"Rec. segundo Venc. ({PorcenSegundoVenc:f2}%) ",-33}${SobreCargoMontoSegundoVenc,15:f2}\r\n" +
-                           $"  {$"Segundo Venc. ({FechaSegundoVenc:dd/MM/yy})",-33}${MontoSegundoVenc,15:f2}\r\n";
-            //faltan cosas
+            string linea = $@"{$"Cuota número: {Numero}"}
+{$"Valor Cuota: ",-33}${MontoBase,15:f2}
+{$"Donación voluntaria ({PorcenVoluntario}%) ",-33}${MontoVoluntario,15:f2}
+{$"Primer Venc. ({FechaPrimerVenc:dd/MM/yy})",-33}${MontoPrimerVenc,15:f2}
 
+{$"Base. segundo Venc. ",-33}${MontoSegundoVenc,15:f2}
+{$"Rec. segundo Venc. ({PorcenSegundoVenc:f2}%) ",-33}${SobreCargoMontoSegundoVenc,15:f2}
+{$"Segundo Venc. ({FechaSegundoVenc:dd/MM/yy})",-33}${MontoSegundoVenc,15:f2}";
+            
             return linea;
         }
     }
