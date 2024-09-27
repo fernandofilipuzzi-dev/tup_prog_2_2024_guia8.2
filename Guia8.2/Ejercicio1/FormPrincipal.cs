@@ -11,7 +11,7 @@ namespace Ejercicio1
     public partial class FormPrincipal : Form
     {
         Calendario calendario = new Calendario();
-
+        List<PlanDePago> planes = new List<PlanDePago>();
         public FormPrincipal()
         {
             InitializeComponent();
@@ -27,13 +27,15 @@ namespace Ejercicio1
                     string nombre = tbApellidoNombres.Text;
                     double monto = Convert.ToDouble(tbMonto.Text);
                     int cantCuotas = Convert.ToInt32(nupCuotas.Value);
-                    DateTime fechaAltaPlan = pkFechaInicioPlan.Value;
+                    DateTime fechaAltaPlan = dtpFechaInicioPlan.Value;
 
                     Infractor destinatario = new Infractor(dni, nombre);
 
                     PlanDePago plan = new PlanDePago(monto, cantCuotas, fechaAltaPlan, destinatario, calendario);
 
                     tbVer.Text = plan.VerDetalle();
+
+                    planes.Add(plan);
 
                     #region limpiando controles
                     tbDNI.Clear();
@@ -80,13 +82,13 @@ namespace Ejercicio1
 
             for (int idx = 0; idx < calendario.CantidadFeriados; idx++)
             {
-                DateTime dia = calendario[idx].Dia;
+                DateTime dia = calendario[idx].Fecha;
                 fFeriados.mCCalendario.AddBoldedDate(dia);
             }
 
             fFeriados.ShowDialog();
 
-            while (fFeriados.DialogResult == DialogResult.OK || 
+            while (fFeriados.DialogResult == DialogResult.OK ||
                         fFeriados.DialogResult == DialogResult.Retry)
             {
                 if (fFeriados.DialogResult == DialogResult.OK)
@@ -98,7 +100,7 @@ namespace Ejercicio1
                     if (f == null)
                     {
                         f = calendario.AgregarFeriado(dia, descripcion);
-                        fFeriados.mCCalendario.AddBoldedDate(f.Dia);
+                        fFeriados.mCCalendario.AddBoldedDate(f.Fecha);
                     }
                     else
                     {
@@ -121,6 +123,19 @@ namespace Ejercicio1
 
                 fFeriados.ShowDialog();
             }
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            FormVer ver = new FormVer();
+
+            planes.Sort();
+
+            foreach (PlanDePago plan in planes)
+            {
+                ver.tbVer.Text += plan.ToString() + Environment.NewLine;
+            }
+            ver.ShowDialog();
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace Ejercicio3
+﻿namespace Ejercicio5
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.

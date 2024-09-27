@@ -4,13 +4,14 @@ namespace Ejercicio2.Models
 {
     public class Feriado
     {
-        public DateTime Dia { get; set; }
+        public DateTime Fecha { get; set; }
 
         public string Descripcion { get; set; }
 
-        public bool CompararDia(DateTime day)
+        public Feriado(DateTime dia, string descripcion)
         {
-            return day != null && Dia != null && day.Year == Dia.Year && day.Month == Dia.Month && day.Day == Dia.Day;
-        }
+            Fecha = dia;
+            Descripcion = descripcion;
+        }   
     }
 }

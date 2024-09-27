@@ -3,7 +3,6 @@
 namespace Ejercicio2.Models
 {
 
-
     class Empresa
     {
         int numeroEvento;
@@ -12,7 +11,7 @@ namespace Ejercicio2.Models
 
         List<Evento> eventos = new List<Evento>();
 
-        public Evento RegistrarEvento(string lugar)
+        public Evento RegistrarEvento(string lugar, double valorH, double valorNH)
         { 
             Evento nuevo=new Evento(++numeroEvento,lugar,valorH,valorNH);
             eventos.Add(nuevo);

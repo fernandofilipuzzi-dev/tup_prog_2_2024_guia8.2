@@ -38,7 +38,7 @@ namespace Ejercicio1.Models
             {
                 foreach (Feriado feriado in feriados)
                 {
-                    if (feriado.Dia.Year==dia.Year && feriado.Dia.Month == dia.Month && feriado.Dia.Day == dia.Day)
+                    if (feriado.Fecha.Year==dia.Year && feriado.Fecha.Month == dia.Month && feriado.Fecha.Day == dia.Day)
                     { 
                         return feriado; 
                     }

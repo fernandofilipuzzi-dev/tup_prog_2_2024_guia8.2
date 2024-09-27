@@ -7,41 +7,44 @@ namespace Ejercicio2.Models
     {
         List<Feriado> feriados = new List<Feriado>();
 
-        public Feriado Buscar(DateTime fecha)
+        public int CantidadFeriados 
         {
-            Feriado buscado = null;
-            int n = 0;
-            while (n < feriados.Count && buscado == null)
+            get 
             {
-                if (feriados[n].Dia.Year == fecha.Year &&
-                    feriados[n].Dia.Month == fecha.Month &&
-                    feriados[n].Dia.Day == fecha.Day)
-                {
-                    buscado = feriados[n];
-                }
-                else
-                {
-                    n++;
-                }
+                return feriados.Count;
             }
-            return buscado;
         }
 
-        public DateTime[] Fechas()
+        public Feriado AgregarFeriado(DateTime dia, string descripcion)
         {
-            DateTime[] fechas = new DateTime[feriados.Count];
-            int n = 0;
-            while (n < feriados.Count)
-            {
-                fechas[n] = feriados[n].Dia;
-                n++;
-            }
-            return fechas;
+            Feriado nuevo = new Feriado(dia, descripcion);
+            feriados.Add(nuevo);
+            return nuevo;
         }
 
-        public void AgregarFeriado(DateTime dia, string descripcion)
+        public Feriado this[int idx] 
         {
-            feriados.Add(new Feriado() { Dia = dia, Descripcion = descripcion });
+            get
+            {
+                if (idx >= 0 && idx < CantidadFeriados)
+                    return feriados[idx];
+                return null;
+            }
+        }
+
+        public Feriado this[DateTime dia]
+        {
+            get
+            {
+                foreach (Feriado feriado in feriados)
+                {
+                    if (feriado.Fecha.Year==dia.Year && feriado.Fecha.Month == dia.Month && feriado.Fecha.Day == dia.Day)
+                    { 
+                        return feriado; 
+                    }
+                }
+                return null;
+            }
         }
     }
 }

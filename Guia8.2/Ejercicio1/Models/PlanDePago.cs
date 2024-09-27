@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ejercicio1.Models
 {
-    public class PlanDePago
+    public class PlanDePago : IComparable
     {
         public Infractor Destinatario { get; private set; }
 
@@ -92,7 +92,7 @@ namespace Ejercicio1.Models
 
         public override string ToString()
         {
-            return $"Plan de pagos: {Destinatario.ApelldosyNombres}";
+            return $"Plan de pagos: {Destinatario.ToString()}";
         }
 
         public string VerDetalle()
@@ -106,5 +106,14 @@ namespace Ejercicio1.Models
             }
             return linea;
         }
+
+        public int CompareTo(object obj)
+        {
+            PlanDePago otro = obj as PlanDePago;
+            if(otro !=null)
+                return otro.Destinatario.DNI.CompareTo(otro.Destinatario.DNI);
+            return 1;
+        }
+
     }
 }
