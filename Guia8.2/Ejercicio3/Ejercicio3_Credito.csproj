@@ -52,6 +52,10 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Credito.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Cuota.cs" />
+    <Compile Include="Models\Financiera.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
@@ -83,8 +87,6 @@
   <ItemGroup>
     <Content Include="UML\ejercicio3.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
